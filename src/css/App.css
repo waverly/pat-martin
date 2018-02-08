@@ -1,0 +1,266 @@
+/*....................................SCSS VARIABLES..................................*/
+/*....................................................................................*/
+/*.................................................................................*/
+/*$break-large-desktop: 2500px;*/
+/*$break-infinite: 500000px;*/
+/*....................................SCSS MIXINS..................................*/
+/*....................................General settings..................................*/
+/*.....................TEXT MARK STYLES......................*/
+::-moz-selection {
+  background: transparent;
+  text-shadow: none; }
+
+::selection {
+  background: transparent;
+  text-shadow: none; }
+
+/*.....................ACTIVE CLASSES......................*/
+.active {
+  opacity: 1; }
+
+.blacked_text {
+  color: #FFFFFF; }
+
+.blacked_path {
+  fill: #FFFFFF; }
+
+.blacked_background {
+  background-color: #000000; }
+
+/*....................HIDING SCROLLBAR.....................*/
+::-webkit-scrollbar {
+  display: none; }
+
+* {
+  -webkit-overflow-scrolling: touch; }
+
+*, *:before, *:after {
+  box-sizing: inherit;
+  outline: 0; }
+
+/*.....................GENERAL STYLES......................*/
+html {
+  font-family: helvetica;
+  width: 100%;
+  margin: 0, 0;
+  padding: 0, 0;
+  box-sizing: border-box;
+  background-color: transparent; }
+
+body {
+  width: 100vw;
+  height: auto;
+  margin: 0, 0;
+  padding: 0, 0;
+  display: block;
+  position: relative;
+  background: #FFFFFF;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 400; }
+
+p, a, li {
+  font-size: 14px;
+  list-style-type: none;
+  letter-spacing: 1px;
+  color: #000000; }
+
+input, textarea, select, a, li {
+  text-decoration: none; }
+
+a {
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 26px;
+  font-family: helvetica;
+  letter-spacing: 1px;
+  /*  @if $media == large-desktop {
+    @media only screen and (min-width: $break-large-desktop + 1) and (max-width: $break-infinite) { @content; }
+  }*/ }
+  @media only screen and (min-width: 0px) and (max-width: 767px) {
+    a {
+      font-size: 16px;
+      line-height: 17px; } }
+
+.a-hover {
+  color: #000000;
+  transition: color 0.4s ease;
+  -webkit-transition: color 0.4s ease;
+  -moz-transition: color 0.4s ease;
+  -ms-transition: color 0.4s ease;
+  -o-transition: color 0.4s ease; }
+  .a-hover:hover {
+    color: #F5F5F5;
+    /*  @if $media == large-desktop {
+    @media only screen and (min-width: $break-large-desktop + 1) and (max-width: $break-infinite) { @content; }
+  }*/
+    /*  @if $media == large-desktop {
+    @media only screen and (min-width: $break-large-desktop + 1) and (max-width: $break-infinite) { @content; }
+  }*/
+    /*  @if $media == large-desktop {
+    @media only screen and (min-width: $break-large-desktop + 1) and (max-width: $break-infinite) { @content; }
+  }*/ }
+    @media only screen and (min-width: 0px) and (max-device-width: 767px) {
+      .a-hover:hover {
+        color: #000000 !important; } }
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1022px) and (orientation: portrait) {
+      .a-hover:hover {
+        color: #000000 !important; } }
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1022px) and (orientation: landscape) {
+      .a-hover:hover {
+        color: #000000 !important; } }
+
+p {
+  font-size: 14px;
+  line-height: 26px;
+  font-family: helvetica;
+  letter-spacing: 1px;
+  /*  @if $media == large-desktop {
+    @media only screen and (min-width: $break-large-desktop + 1) and (max-width: $break-infinite) { @content; }
+  }*/ }
+  @media only screen and (min-width: 0px) and (max-width: 767px) {
+    p {
+      font-size: 16px;
+      line-height: 17px; } }
+
+h1 {
+  font-size: 30px;
+  line-height: 50px;
+  font-family: helvetica;
+  letter-spacing: 2px;
+  /*  @if $media == large-desktop {
+    @media only screen and (min-width: $break-large-desktop + 1) and (max-width: $break-infinite) { @content; }
+  }*/ }
+  @media only screen and (min-width: 0px) and (max-width: 767px) {
+    h1 {
+      font-size: 25px; } }
+
+h2 {
+  font-size: 22px;
+  line-height: 36px;
+  font-family: helvetica;
+  letter-spacing: 0px;
+  /*  @if $media == large-desktop {
+    @media only screen and (min-width: $break-large-desktop + 1) and (max-width: $break-infinite) { @content; }
+  }*/ }
+  @media only screen and (min-width: 0px) and (max-width: 767px) {
+    h2 {
+      font-size: 20px;
+      line-height: 36px; } }
+
+.pop {
+  position: fixed;
+  width: 100vw;
+  height: 50px;
+  position: fixed;
+  bottom: 0;
+  z-index: 14;
+  border-top: 1px solid black;
+  background: rgba(255, 255, 255, 0.2); }
+
+/*.........................MAIN............................*/
+table {
+  width: 100vw;
+  height: 100vh; }
+  table tr td {
+    vertical-align: middle; }
+
+/*....................................SCSS VARIABLES..................................*/
+/*....................................................................................*/
+.home-wrap .web-alert {
+  position: fixed;
+  width: 50vw;
+  display: inline-block;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  z-index: 20;
+  background-color: transparent; }
+
+.home-wrap .art-alert {
+  position: fixed;
+  width: 50vw;
+  display: inline-block;
+  height: 100vh;
+  right: 0;
+  top: 0;
+  z-index: 20;
+  background-color: transparent; }
+
+.home-wrap .webWrap {
+  position: fixed;
+  display: inline-block;
+  left: 0;
+  top: 0;
+  z-index: 10; }
+  .home-wrap .webWrap svg path {
+    fill: #FCFFED;
+    transition: 1s all; }
+  .home-wrap .webWrap .web-ul {
+    position: fixed;
+    bottom: 35px;
+    left: 35px; }
+    .home-wrap .webWrap .web-ul li {
+      text-decoration: none; }
+      .home-wrap .webWrap .web-ul li p {
+        font-size: 10px;
+        line-height: 14px;
+        color: #AA5F00;
+        -webkit-transition: font-size 2s, line-height 2s;
+        -moz-transition: font-size 2s, line-height 2s;
+        -o-transition: font-size 2s, line-height 2s;
+        transition: font-size 2s, line-height 2s; }
+
+.home-wrap .webWrap.active svg path {
+  fill: #AA5F00;
+  d: path("M530.982,0.5 2.5,-0.5 2.5,699.5 735.129,699.5 ");
+  d: "M530.982,0.5 2.5,-0.5 2.5,699.5 735.129,699.5 "; }
+
+.home-wrap .webWrap.active .web-ul {
+  position: fixed; }
+  .home-wrap .webWrap.active .web-ul li {
+    text-decoration: none; }
+    .home-wrap .webWrap.active .web-ul li p {
+      color: #FCFFED;
+      font-size: 18px;
+      line-height: 22px;
+      -webkit-transition: font-size 2s, line-height 2s;
+      -moz-transition: font-size 2s, line-height 2s;
+      -o-transition: font-size 2s, line-height 2s;
+      transition: font-size 2s, line-height 2s; }
+
+.home-wrap .artWrap {
+  position: fixed;
+  display: inline-block;
+  right: 0;
+  top: 0; }
+  .home-wrap .artWrap svg {
+    padding-right: 14vw; }
+  .home-wrap .artWrap svg path {
+    fill: #FCFFED;
+    transition: 1s all; }
+  .home-wrap .artWrap .art-ul {
+    position: fixed;
+    top: 35px;
+    right: 35px; }
+    .home-wrap .artWrap .art-ul li {
+      text-decoration: none; }
+      .home-wrap .artWrap .art-ul li p {
+        color: #AA5F00;
+        font-size: 10px;
+        line-height: 14px;
+        transition: font-size 2s, line-height 2s; }
+
+.home-wrap .artWrap.active svg path {
+  fill: #AA5F00;
+  d: path("M390.317,-0.5 179.437,700 967.5,700.5 967.5,0 ");
+  d: "M390.317,-0.5 179.437,700 967.5,700.5 967.5,0 "; }
+
+.home-wrap .artWrap.active .art-ul {
+  position: fixed; }
+  .home-wrap .artWrap.active .art-ul li {
+    text-decoration: none; }
+    .home-wrap .artWrap.active .art-ul li p {
+      color: #FCFFED;
+      font-size: 18px;
+      line-height: 22px;
+      transition: font-size 2s, line-height 2s, color 2s; }
