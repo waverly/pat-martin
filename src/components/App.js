@@ -1,50 +1,34 @@
 import React, { Component } from 'react';
 import Prismic from 'prismic-javascript';
-import logo from '../logo.svg';
+import Nav from './Nav';
 import '../css/App.css';
 
-const apiEndpoint = 'https://waverly.prismic.io/api/v2';
+const apiEndpoint = 'https://patmartinclone.prismic.io/api/v2';
 const classNames = require( 'classnames' );
 
 class App extends Component {
 
   constructor(){
     super();
-    // this.addData = this.addData.bind(this);
-    // this.webEnter = this.webEnter.bind(this);
-    // this.artEnter = this.artEnter.bind(this);
 
     this.state = {
-      data: {
-        art: {},
-        web: {}
-      },
-      homeComponent: {
-        art: {
-          isActive: false
-        },
-        web:{
-          isActive: true
-        }
-      }
+      images: {}
     };
   }
 
   addData(item){
-    const data = {...this.state.data};
+    let counter = 0;
+    const images = {...this.state.images};
     item.forEach( (d) => {
       let timestamp = Date.now();
       // data[`item-${timestamp}`] = d;
-      if (d.type === "art"){
-        data.art[`item-${timestamp}`] = d;
+      if (d.type === "image"){
+        images[counter] = d.data.image.url;
+        counter++;
       }
-      else if (d.type === "web"){
-        data.web[`item-${timestamp}`] = d;
-      }
-      this.setState({ data });
+      this.setState({ images });
     });
   }
-
   componentDidMount(){
     Prismic.api(apiEndpoint).then(api => {
       api.query("")
@@ -54,42 +38,25 @@ class App extends Component {
       })
     });
     // end of api
+
   }
   // end of didmount
 
-  webEnter(){
-
-    const homeC = {...this.state.homeComponent};
-    homeC.web.isActive = true;
-    homeC.art.isActive = false;
-    this.setState({ homeComponent : homeC })
-
-  }
-
-  artEnter(){
-
-    const homeC = {...this.state.homeComponent};
-    homeC.web.isActive = false;
-    homeC.art.isActive = true;
-    this.setState({ homeComponent : homeC })
-
-  }
-
 
   render() {
-    const art = classNames({
-      active: this.state.homeComponent.art.isActive,
-      artWrap: true
-    });
+    const images = {...this.state.images};
 
-    const web = classNames({
-      active: this.state.homeComponent.web.isActive,
-      webWrap: true
-    });
+    // on left/right arrow, increment or decrement image counter
 
     return (
-      <div className="home-wrap">
-        <p>hi</p>
+
+      <div>
+        <Nav/>
+        <div className="slider-wrap">
+          <div className="img-wrap">
+            <img src={images[0]} alt=""/>
+          </div>
+        </div>
       </div>
     );
   }

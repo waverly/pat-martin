@@ -1,144 +1,25 @@
+@import 'reset';
 @import 'general';
 @import 'variables';
 
 
-.home-wrap{
+.slider-wrap{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
 
-  .web-alert{
-    position: fixed;
-    width: 50vw;
-    display: inline-block;
-    height: 100vh;
-    left: 0;
-    top: 0;
-    z-index: 20;
-    background-color: transparent;
-  }
+  .img-wrap{
+    width: 60%;
+    height: 60%;
+    text-align: center;
 
-  .art-alert{
-    position: fixed;
-    width: 50vw;
-    display: inline-block;
-    height: 100vh;
-    right: 0;
-    top: 0;
-    z-index: 20;
-    background-color: transparent;
-  }
-
-  .webWrap{
-    position: fixed;
-    // width: 100vw;
-    display: inline-block;
-    // height: 100vh;
-    left: 0;
-    top: 0;
-    z-index: 10;
-
-    svg path{
-      fill: $cream;
-      transition: 1s all;
-    }
-
-    .web-ul{
-      position: fixed;
-      bottom: $margin-bottom;
-      left: $margin-bottom;
-
-      li{
-        text-decoration: none;
-
-        p{
-          font-size: 10px;
-          line-height: 14px;
-          color: $burnt;
-          -webkit-transition: font-size 2s, line-height 2s;
-          -moz-transition: font-size 2s, line-height 2s;
-          -o-transition: font-size 2s, line-height 2s;
-          transition: font-size 2s, line-height 2s;
-        }
-
-      }
+    img{
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      height: auto;
     }
   }
-
-  .webWrap.active{
-    svg path {
-        fill: $burnt;
-        d: path("M530.982,0.5 2.5,-0.5 2.5,699.5 735.129,699.5 ");
-        d:"M530.982,0.5 2.5,-0.5 2.5,699.5 735.129,699.5 " ;
-    }
-    .web-ul{
-      position: fixed;
-
-      li{
-        text-decoration: none;
-        p{
-          color: $cream;
-          font-size: 18px;
-          line-height: 22px;
-          -webkit-transition: font-size 2s, line-height 2s;
-          -moz-transition: font-size 2s, line-height 2s;
-          -o-transition: font-size 2s, line-height 2s;
-          transition: font-size 2s, line-height 2s;
-        }
-
-      }
-    }
-  }
-
-  .artWrap{
-    position: fixed;
-    // width: 100vw;
-    display: inline-block;
-    // height: 100vh;
-    right: 0;
-    top: 0;
-    svg{
-      padding-right: 14vw;
-    }
-    svg path{
-      fill: $cream;
-      transition: 1s all;
-    }
-
-    .art-ul{
-      position: fixed;
-      top: $margin-bottom;
-      right: $margin-bottom;
-
-      li{
-        text-decoration: none;
-        p{
-          color: $burnt;
-          font-size: 10px;
-          line-height: 14px;
-          transition: font-size 2s, line-height 2s;
-        }
-      }
-    }
-  }
-
-  .artWrap.active{
-    svg path {
-        fill: $burnt;
-        d: path("M390.317,-0.5 179.437,700 967.5,700.5 967.5,0 ");
-        d:"M390.317,-0.5 179.437,700 967.5,700.5 967.5,0 ";
-    }
-
-    .art-ul{
-      position: fixed;
-
-      li{
-        text-decoration: none;
-        p{
-          color: $cream;
-          font-size: 18px;
-          line-height: 22px;
-          transition: font-size 2s, line-height 2s, color 2s;
-        }
-      }
-    }
-  }
-
 }

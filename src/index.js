@@ -1,8 +1,26 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import './css/index.css';
-import App from './components/App';
-import registerServiceWorker from './registerServiceWorker';
+import { render } from 'react-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
-ReactDOM.render(<App />, document.getElementById('root'));
-registerServiceWorker();
+import App from './components/App';
+import Nav from './components/Nav';
+import Index from './components/Index';
+import NotFound from './components/NotFound';
+
+const Root = () => {
+  return (
+      <BrowserRouter>
+        <div>
+          <Nav/>
+          <Switch>
+            <Route exact path='/' component={App} />
+            <Route path='/index' component={Index} />
+            <Route component={NotFound} />
+          </Switch>
+        </div>
+      </BrowserRouter>
+  )
+}
+// not sure why I'm unable to render Root
+
+render(<Root/>, document.querySelector('#main'));

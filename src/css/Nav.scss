@@ -1,0 +1,21 @@
+@import 'reset';
+@import 'general';
+@import 'variables';
+
+.nav-wrap{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: grey;
+  // height: 50px;
+  display: flex;
+  justify-content: space-between;
+  margin: $margin-sides;
+
+  .name{
+  }
+
+  .index{
+  }
+}
