@@ -70,5 +70,17 @@
   	}
   }
 
+}
 
+@media screen and (max-width: $break-phone){
+  .slideshow-wrapper{
+
+    .button{
+			display: none;
+		}
+
+		.slideshow{
+			width: 90%;
+		}
+  }
 }

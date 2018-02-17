@@ -118,14 +118,14 @@ a {
   cursor: pointer;
   font-size: 12px;
   line-height: 26px;
-  font-family: helvetica;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   letter-spacing: 1px;
   /*  @if $media == large-desktop {
     @media only screen and (min-width: $break-large-desktop + 1) and (max-width: $break-infinite) { @content; }
   }*/ }
   @media only screen and (min-width: 0px) and (max-width: 767px) {
     a {
-      font-size: 14px;
+      font-size: 12px;
       line-height: 17px; } }
 
 .a-hover {
@@ -159,20 +159,20 @@ a {
 p {
   font-size: 12px;
   line-height: 26px;
-  font-family: helvetica;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   letter-spacing: 1px;
   /*  @if $media == large-desktop {
     @media only screen and (min-width: $break-large-desktop + 1) and (max-width: $break-infinite) { @content; }
   }*/ }
   @media only screen and (min-width: 0px) and (max-width: 767px) {
     p {
-      font-size: 14px;
+      font-size: 12px;
       line-height: 17px; } }
 
 h1 {
   font-size: 30px;
   line-height: 50px;
-  font-family: helvetica;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   letter-spacing: 2px;
   /*  @if $media == large-desktop {
     @media only screen and (min-width: $break-large-desktop + 1) and (max-width: $break-infinite) { @content; }
@@ -184,7 +184,7 @@ h1 {
 h2 {
   font-size: 22px;
   line-height: 36px;
-  font-family: helvetica;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   letter-spacing: 0px;
   /*  @if $media == large-desktop {
     @media only screen and (min-width: $break-large-desktop + 1) and (max-width: $break-infinite) { @content; }
@@ -221,10 +221,23 @@ table {
   justify-content: center;
   flex-wrap: wrap; }
   .flex-wrap .img-wrap {
-    height: 150px;
-    margin: 1em; }
+    height: 200px;
+    margin: 2em; }
     .flex-wrap .img-wrap img {
       max-width: 100%;
       max-height: 100%;
       height: auto;
       width: auto; }
+
+@media screen and (min-width: 1500px) {
+  .img-wrap {
+    height: 250px;
+    margin: 3em; } }
+
+@media screen and (max-width: 767px) {
+  .flex-wrap {
+    justify-content: space-evenly;
+    padding: 100px 25px; }
+    .flex-wrap .img-wrap {
+      height: 150px;
+      margin: 1em; } }

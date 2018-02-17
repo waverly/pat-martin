@@ -16,6 +16,12 @@
   text-transform: uppercase;
 
   .name{
+    .name-p{
+      &:hover{
+        cursor: pointer;
+        color: $grey;
+      }
+    }
     .reveal{
       .item{
         margin-top: 1em;

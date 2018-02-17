@@ -33,7 +33,7 @@ class Nav extends React.Component {
     return(
       <div className="nav-wrap">
         <div className="name" onClick={this.handleInfo}>
-          <p>Pat Martin</p>
+          <p className="name-p">Pat Martin</p>
           <div
             className={
               this.state.showInfo ? 'info reveal' : 'info hide'
