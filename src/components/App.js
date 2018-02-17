@@ -1,18 +1,27 @@
 import React, { Component } from 'react';
 import Prismic from 'prismic-javascript';
 import Nav from './Nav';
+import Index from './Index';
+import Home from './Home';
+import ColorToggle from './ColorToggle';
+import ReactCSSTransitionReplace from 'react-css-transition-replace';
 import '../css/App.css';
 
+import { BrowserRouter, Switch, Route, Router } from 'react-router-dom';
+
 const apiEndpoint = 'https://patmartinclone.prismic.io/api/v2';
-const classNames = require( 'classnames' );
 
 class App extends Component {
 
   constructor(){
     super();
 
+    this.toggleWhite = this.toggleWhite.bind(this);
+    this.toggleBlack = this.toggleBlack.bind(this);
+
     this.state = {
-      images: {}
+      images: {},
+      invert: false
     };
   }
 
@@ -20,7 +29,7 @@ class App extends Component {
     let counter = 0;
     const images = {...this.state.images};
     item.forEach( (d) => {
-      let timestamp = Date.now();
+      // let timestamp = Date.now();
       // data[`item-${timestamp}`] = d;
       if (d.type === "image"){
         images[counter] = d.data.image.url;
@@ -29,6 +38,17 @@ class App extends Component {
       this.setState({ images });
     });
   }
+
+  toggleBlack(){
+    const invert = true;
+    this.setState({ invert });
+  }
+
+  toggleWhite(){
+    const invert = false;
+    this.setState({ invert });
+  }
+
   componentDidMount(){
     Prismic.api(apiEndpoint).then(api => {
       api.query("")
@@ -46,18 +66,53 @@ class App extends Component {
   render() {
     const images = {...this.state.images};
 
-    // on left/right arrow, increment or decrement image counter
-
     return (
 
-      <div>
-        <Nav/>
-        <div className="slider-wrap">
-          <div className="img-wrap">
-            <img src={images[0]} alt=""/>
-          </div>
-        </div>
+      <div className="router-ex">
+        <Route render={({location}) => (
+          <ReactCSSTransitionReplace
+            transitionName="fade"
+            transitionEnterTimeout={1000}
+            transitionLeaveTimeout={1000}
+          >
+            <div key={location.pathname} className={this.state.invert ? 'black' : 'white'}>
+              <Route path="/" component={Nav}  />
+              <Route path="/" render={(props) => (
+                <ColorToggle toggleWhite={this.toggleWhite} toggleBlack={this.toggleBlack}/>
+              )} />
+              <Switch location={location}>
+                <Route exact path='/' render={(props) => (
+                  <Home images={this.state.images}/>
+                )} />
+                <Route exact path='/index' render={(props) => (
+                  <Index images={this.state.images}/>
+                )} />
+              </Switch>
+            </div>
+          </ReactCSSTransitionReplace>
+            )}/>
       </div>
+
+
+
+
+
+        // <div className={this.state.invert ? 'black' : 'white'}>
+        //   <Route path="/" component={Nav}  />
+        //   <Route path="/" render={(props) => (
+        //     <ColorToggle toggleWhite={this.toggleWhite} toggleBlack={this.toggleBlack}/>
+        //   )} />
+        //   <Switch>
+        //     <Route exact path='/' render={(props) => (
+        //       <Home images={this.state.images}/>
+        //     )} />
+        //     <Route exact path='/index' render={(props) => (
+        //       <Index images={this.state.images}/>
+        //     )} />
+        //   </Switch>
+        // </div>
+
+
     );
   }
 }

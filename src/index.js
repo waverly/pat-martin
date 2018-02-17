@@ -10,14 +10,7 @@ import NotFound from './components/NotFound';
 const Root = () => {
   return (
       <BrowserRouter>
-        <div>
-          <Nav/>
-          <Switch>
-            <Route exact path='/' component={App} />
-            <Route path='/index' component={Index} />
-            <Route component={NotFound} />
-          </Switch>
-        </div>
+        <App/>
       </BrowserRouter>
   )
 }

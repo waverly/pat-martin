@@ -23,3 +23,41 @@
     }
   }
 }
+
+.white{
+  background-color: white;
+  transition: .5s all;
+
+  h1, h2, h3, p, a{
+    color: black;
+  }
+}
+
+.black{
+  background-color: black;
+  transition: .5s all;
+  h1, h2, h3, p, a{
+    color: white;
+  }
+}
+
+.fade-leave {
+  opacity: 1;
+}
+.fade-leave.fade-leave-active {
+  opacity: 0;
+  transition: opacity .5s ease-in;
+}
+
+.fade-enter {
+  opacity: 0;
+}
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  /* Delay the enter animation until the leave completes */
+  transition: opacity .4s ease-in .6s;
+}
+
+.fade-height {
+  transition: height 0s ease-in-out;
+}

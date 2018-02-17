@@ -1,0 +1,17 @@
+/*....................................SCSS VARIABLES..................................*/
+/*....................................................................................*/
+.toggle-wrap {
+  position: fixed;
+  bottom: 25px;
+  left: 25px;
+  z-index: 1000; }
+  .toggle-wrap .toggle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid grey; }
+  .toggle-wrap .black {
+    background-color: black;
+    margin-bottom: .75em; }
+  .toggle-wrap .white {
+    background-color: white; }

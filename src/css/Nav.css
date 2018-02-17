@@ -218,7 +218,17 @@ table {
   top: 0;
   left: 0;
   right: 0;
-  background-color: grey;
+  background-color: transparent;
+  height: 50px;
   display: flex;
   justify-content: space-between;
-  margin: 25px; }
+  margin: 25px;
+  z-index: 10; }
+  .nav-wrap .name .reveal {
+    margin-top: 1em; }
+  .nav-wrap .name .hide {
+    margin-top: -50em !important; }
+  .nav-wrap .name .info {
+    width: 250px; }
+    .nav-wrap .name .info p {
+      width: 100%; }

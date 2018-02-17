@@ -1,0 +1,22 @@
+@import 'variables';
+
+.toggle-wrap{
+  position: fixed;
+  bottom: $margin-sides;
+  left: $margin-sides;
+  z-index: 1000;
+  
+  .toggle{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid grey;
+  }
+  .black{
+    background-color: black;
+    margin-bottom: .75em;
+  }
+  .white{
+    background-color: white;
+  }
+}

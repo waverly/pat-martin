@@ -7,13 +7,30 @@
   top: 0;
   left: 0;
   right: 0;
-  background-color: grey;
-  // height: 50px;
+  background-color: transparent;
+  height: $nav-height;
   display: flex;
   justify-content: space-between;
   margin: $margin-sides;
+  z-index: $z-nav;
 
   .name{
+    .reveal{
+      margin-top: 1em;
+    }
+
+    .hide{
+      margin-top: -50em!important;
+    }
+
+    .info{
+      width: 250px;
+      // margin-top: -50em;
+
+      p{
+        width: 100%;
+      }
+    }
   }
 
   .index{

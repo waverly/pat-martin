@@ -213,48 +213,18 @@ table {
 
 /*....................................SCSS VARIABLES..................................*/
 /*....................................................................................*/
-.slider-wrap {
+.flex-wrap {
+  width: 100vw;
+  min-height: 100vh;
+  padding: 150px 25px;
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: 100vh;
-  width: 100vw; }
-  .slider-wrap .img-wrap {
-    width: 60%;
-    height: 60%;
-    text-align: center; }
-    .slider-wrap .img-wrap img {
+  flex-wrap: wrap; }
+  .flex-wrap .img-wrap {
+    height: 150px;
+    margin: 1em; }
+    .flex-wrap .img-wrap img {
       max-width: 100%;
       max-height: 100%;
-      width: auto;
-      height: auto; }
-
-.white {
-  background-color: white;
-  transition: .5s all; }
-  .white h1, .white h2, .white h3, .white p, .white a {
-    color: black; }
-
-.black {
-  background-color: black;
-  transition: .5s all; }
-  .black h1, .black h2, .black h3, .black p, .black a {
-    color: white; }
-
-.fade-leave {
-  opacity: 1; }
-
-.fade-leave.fade-leave-active {
-  opacity: 0;
-  transition: opacity .5s ease-in; }
-
-.fade-enter {
-  opacity: 0; }
-
-.fade-enter.fade-enter-active {
-  opacity: 1;
-  /* Delay the enter animation until the leave completes */
-  transition: opacity .4s ease-in .6s; }
-
-.fade-height {
-  transition: height 0s ease-in-out; }
+      height: auto;
+      width: auto; }
