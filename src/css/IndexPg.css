@@ -106,7 +106,7 @@ body {
   font-weight: 400; }
 
 p, a, li {
-  font-size: 14px;
+  font-size: 12px;
   list-style-type: none;
   letter-spacing: 1px;
   color: #000000; }
@@ -116,7 +116,7 @@ input, textarea, select, a, li {
 
 a {
   cursor: pointer;
-  font-size: 14px;
+  font-size: 12px;
   line-height: 26px;
   font-family: helvetica;
   letter-spacing: 1px;
@@ -125,7 +125,7 @@ a {
   }*/ }
   @media only screen and (min-width: 0px) and (max-width: 767px) {
     a {
-      font-size: 16px;
+      font-size: 14px;
       line-height: 17px; } }
 
 .a-hover {
@@ -157,7 +157,7 @@ a {
         color: #000000 !important; } }
 
 p {
-  font-size: 14px;
+  font-size: 12px;
   line-height: 26px;
   font-family: helvetica;
   letter-spacing: 1px;
@@ -166,7 +166,7 @@ p {
   }*/ }
   @media only screen and (min-width: 0px) and (max-width: 767px) {
     p {
-      font-size: 16px;
+      font-size: 14px;
       line-height: 17px; } }
 
 h1 {

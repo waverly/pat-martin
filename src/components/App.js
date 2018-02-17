@@ -7,7 +7,7 @@ import ColorToggle from './ColorToggle';
 import ReactCSSTransitionReplace from 'react-css-transition-replace';
 import '../css/App.css';
 
-import { BrowserRouter, Switch, Route, Router } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 
 const apiEndpoint = 'https://patmartinclone.prismic.io/api/v2';
 
@@ -18,9 +18,13 @@ class App extends Component {
 
     this.toggleWhite = this.toggleWhite.bind(this);
     this.toggleBlack = this.toggleBlack.bind(this);
+    this.next = this.next.bind(this);
+    this.previous = this.previous.bind(this);
+    this.handleIndexClick = this.handleIndexClick.bind(this);
 
     this.state = {
       images: {},
+      activeSlide: 0,
       invert: false
     };
   }
@@ -49,6 +53,27 @@ class App extends Component {
     this.setState({ invert });
   }
 
+  handleIndexClick(key){
+    console.log('clicked on index, key is', key);
+    const activeSlide = parseFloat(key);
+    console.log(activeSlide, key);
+    this.setState({activeSlide});
+  }
+
+  next() {
+    const activeSlide = (this.state.activeSlide === Object.keys(this.state.images).length - 1) ? 0 : this.state.activeSlide + 1;
+    this.setState({
+      activeSlide
+    })
+  }
+
+  previous() {
+    const activeSlide = (this.state.activeSlide === 0) ? Object.keys(this.state.images).length - 1 : this.state.activeSlide - 1;
+    this.setState({
+      activeSlide
+    })
+  }
+
   componentDidMount(){
     Prismic.api(apiEndpoint).then(api => {
       api.query("")
@@ -64,7 +89,6 @@ class App extends Component {
 
 
   render() {
-    const images = {...this.state.images};
 
     return (
 
@@ -82,10 +106,17 @@ class App extends Component {
               )} />
               <Switch location={location}>
                 <Route exact path='/' render={(props) => (
-                  <Home images={this.state.images}/>
+                  <Home
+                    next={this.next}
+                    previous={this.previous}
+                    activeSlide={this.state.activeSlide}
+                    images={this.state.images}/>
                 )} />
                 <Route exact path='/index' render={(props) => (
-                  <Index images={this.state.images}/>
+                  <Index
+                    images={this.state.images}
+                    handleIndexClick={this.handleIndexClick}
+                  />
                 )} />
               </Switch>
             </div>

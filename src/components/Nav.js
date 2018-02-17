@@ -25,7 +25,6 @@ class Nav extends React.Component {
   }
 
   componentDidMount(){
-    console.log(this.props.location.pathname);
   }
 
   render(){
@@ -40,7 +39,23 @@ class Nav extends React.Component {
               this.state.showInfo ? 'info reveal' : 'info hide'
             }
           >
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+              <p>is an artist and photographer from Los Angeles.</p>
+            <div className="bottom-info">
+              <div className="item">
+                <p>1.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+              </div>
+              <div className="item">
+                <p>2.</p>
+                <p>Personal</p>
+                <p>hipatmartin@gmail.com</p>
+              </div>
+              <div className="item">
+                <p>2.</p>
+                <p>Instagram</p>
+                <p>@patmartin__</p>
+              </div>
+            </div>
           </div>
         </div>
 

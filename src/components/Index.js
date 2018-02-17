@@ -1,15 +1,13 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../css/IndexPg.css';
 
 class Index extends React.Component {
 
-  constructor(){
-    super();
-  }
-
   componentDidMount(){
 
   }
+
 
   render(){
     const images = this.props.images;
@@ -18,9 +16,14 @@ class Index extends React.Component {
         .map(
           (key) =>
           {return(
-            <div key={key} className="img-wrap">
-              <img src={ images[key] } alt=""/>
-            </div>
+            <Link to={`/`} className="link-home"
+            key={key}
+            onClick={() => {this.props.handleIndexClick(key)}}
+            >
+              <div className="img-wrap">
+                <img src={ images[key] } alt=""/>
+              </div>
+            </Link>
           )
           }
         );
