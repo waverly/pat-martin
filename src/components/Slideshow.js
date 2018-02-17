@@ -59,10 +59,14 @@ class Slideshow extends React.Component {
               height: '70vh',
               position: 'relative'
             }}
-            onClick={this.next}
+            onClick={this.props.next}
           >
             {Object.keys(this.props.images).map((image, index) => (
-              <Slide key={image} image={this.props.images[image]} index={index} active={index === this.props.activeSlide} />
+              <Slide
+                key={image}
+                image={this.props.images[image]}
+                index={index}
+                active={index === this.props.activeSlide} />
             ))}
             <div className="counter"><p>{this.props.activeSlide}</p></div>
           </div>
