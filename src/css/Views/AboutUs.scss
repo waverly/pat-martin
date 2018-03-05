@@ -1,0 +1,23 @@
+@import "../variables";
+
+.our-team {
+  width: 100vw;
+  padding: 10vw;
+  background-color: lightblue;
+  min-height: 50vh;
+  position: relative;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+
+  .inner-wrap {
+    width: 80%;
+  }
+
+  .team-members {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    position: relative;
+  }
+}

@@ -1,7 +1,26 @@
+
 /*....................................SCSS VARIABLES..................................*/
 
+@font-face {
+    font-family: fabrique;
+    src: url(./../../assets/fonts/lafabrique-heavy.ttf);
+    // font-weight:400;
+}
+
+@font-face {
+    font-family: sectra;
+    src: url(./../../assets/fonts/GT-Sectra-Fine-Book.ttf);
+    font-weight:400;
+}
+
+@font-face {
+    font-family: sectra-italic;
+    src: url(./../../assets/fonts/GT-Sectra-Fine-Book-Italic.ttf);
+    font-weight:400;
+}
+
 // ........................................................ELEMENTS
-$nav-height: 50px;
+$nav-height: 150px;
 
 
 // ........................................................FONT WEIGHTS
@@ -11,33 +30,38 @@ $font-weight-heavy: 900;
 
 
 // ........................................................FONT SIZES
-$font-size-h1:30px;
-$font-size-h2:22px;
-$font-size-h3:18px;
-$font-size-p: 12px;
+$font-size-h1:72px;
+$font-size-h2:60px;
+$font-size-h3:36px;
+$font-size-p: 21px;
+$font-size-nav: 18px;
+$font-size-xl: 88px;
+$font-size-small: 14px;
 
-$font-size-h1-mobile: 25px;
-$font-size-h2-mobile: 20px;
-$font-size-h3-mobile: 18px;
+$font-size-h1-mobile: 45px;
+$font-size-h2-mobile: 38px;
+$font-size-h3-mobile: 25px;
 $font-size-p-mobile: 12px;
 
 // ........................................................FONT FAMILIES
-$font-family-h1: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-$font-family-h2: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-$font-family-h3: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-$font-family-p: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-
-
+$font-family-h1: sectra, sans-serif;
+$font-family-h2: sectra, sans-serif;
+$font-family-h3: fabrique, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+$font-family-p: fabrique, "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+$font-family-italic: sectra, sans-serif;
+$sans-serif: fabrique, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+$serif: sectra, sans-serif;
+$serif-italic: sectra-italic, serif;
 
 // ........................................................FONT LINEHEIGHTS
-$line-height-h1: 50px;
-$line-height-h2: 36px;
-$line-height-h3: 30px;
+$line-height-h1: 100px;
+$line-height-h2: 70px;
+$line-height-h3: 60px;
 $line-height-p: 26px;
 
-$line-height-h1-mobile: 40px;
-$line-height-h2-mobile: 36px;
-$line-height-h3-mobile: 20px;
+$line-height-h1-mobile: 55px;
+$line-height-h2-mobile: 42px;
+$line-height-h3-mobile: 30px;
 $line-height-p-mobile: 17px;
 
 
@@ -51,18 +75,19 @@ $letter-spacing-paragraph:1px;
 // ........................................................COLORS
 $black: #000000;
 $white: #FFFFFF;
-$yellow: #ede611;
-$green: #00FF00;
-$red:#FF0000;
-$pink:#f7c0cd;
-$grey:#a8a8a8;
-$light-grey:#F5F5F5;
-$burnt: #AA5F00;
-$cream: #FCFFED;
+$offwhite: #FAF8F3;
+$gold: #FF9E23;
+$cream: #FFFADE;
+$lightblue: #ECF8FF;
+$midblue: #C2EDFF;
+$darkblue: #001938;
+$lightgrey: #999999;
+$midgrey: #444444;
+$darkgrey: #001938;
 
 
 // ........................................................MARGINS
-$margin-sides: 25px;
+$margin-sides: 50px;
 $margin-bottom: 35px;
 $margin-top: 150px;
 $margin-sides-mobile:10px;
