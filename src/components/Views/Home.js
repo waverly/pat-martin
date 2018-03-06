@@ -13,27 +13,36 @@ class Home extends React.Component {
   }
 
   render() {
-    return (
-      <ReactCSSTransitionGroup
-        transitionName="load"
-        transitionAppear={true}
-        transitionEnterTimeout={700}
-        transitionAppearTimeout={700}
-        transitionLeaveTimeout={700}
-      >
-        <div className="home-wrap">
-          <div className="tagline">
-            <h1>
-              <span className="highlight">Reinventing</span> Technology
-              Companies Since 2007
-            </h1>
+    if (this.props.data) {
+      const data = this.props.data.data;
+      return (
+        <ReactCSSTransitionGroup
+          transitionName="load"
+          transitionAppear={true}
+          transitionEnterTimeout={700}
+          transitionAppearTimeout={700}
+          transitionLeaveTimeout={700}
+        >
+          <div className="home-wrap">
+            <div className="tagline">
+              <h1>
+                <span className="highlight">Reinventing</span> Technology
+                Companies Since 2007
+              </h1>
+            </div>
+            <div className="bg-fade" />
+            <div
+              className="bg-img"
+              style={{
+                backgroundImage: "url(" + data.backgroundimage.url + ")"
+              }}
+            />
           </div>
-          <div className="bg-img">
-            {/* <img src="./../assets/imgs/home.jpg" alt=""/> */}
-          </div>
-        </div>
-      </ReactCSSTransitionGroup>
-    );
+        </ReactCSSTransitionGroup>
+      );
+    } else {
+      return "Loading...";
+    }
   }
 }
 

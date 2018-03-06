@@ -4,7 +4,8 @@ import Nav from "./Nav";
 import Footer from "./Footer";
 import Home from "./Home";
 import WhatWeDo from "./WhatWeDo";
-import InvestmentStrategies from "./InvestmentStrategies";
+import DirectLending from "./DirectLending";
+import PrivateEquity from "./PrivateEquity";
 import Portfolio from "./Portfolio";
 import News from "./News";
 import AboutUs from "./AboutUs";
@@ -62,14 +63,7 @@ class App extends Component {
                   <Route
                     exact
                     path="/"
-                    render={props => (
-                      <Home
-                        data={this.state.home}
-                        // previous={this.previous}
-                        // activeSlide={this.state.activeSlide}
-                        // images={this.state.images}
-                      />
-                    )}
+                    render={props => <Home data={this.state.home} />}
                   />
                   <Route
                     exact
@@ -83,11 +77,18 @@ class App extends Component {
                   />
                   <Route
                     exact
-                    path="/investment-strategies"
+                    path="/direct-lending"
                     render={props => (
-                      <InvestmentStrategies
-
-                      // handleIndexClick={this.handleIndexClick}
+                      <DirectLending data={this.state.directlending} />
+                    )}
+                  />
+                  <Route
+                    exact
+                    path="/private-equity"
+                    render={props => (
+                      <PrivateEquity
+                        data={this.state.privateequity}
+                        // handleIndexClick={this.handleIndexClick}
                       />
                     )}
                   />

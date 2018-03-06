@@ -12,7 +12,7 @@
 
   // .text-wrap . active
   &.expanded {
-    .arrow-down {
+    .carrot {
       display: block;
     }
     img {
@@ -24,7 +24,7 @@
     .text-wrap {
       background-color: $cream;
 
-      .arrow-down {
+      .carrot {
         display: block;
       }
 
@@ -125,7 +125,7 @@
     }
     // end icon
 
-    .arrow-down {
+    .carrot {
       width: 0;
       height: 0;
       border-left: 20px solid transparent;

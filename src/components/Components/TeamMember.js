@@ -1,10 +1,6 @@
 import React from "react";
 import "./../../css/Components/TeamMember.css";
 
-function test() {
-  alert("test");
-}
-
 const TeamMember = member => {
   if (member) {
     return (
@@ -37,7 +33,7 @@ const TeamMember = member => {
               </div>
             </div>
 
-            <div className="arrow-down" />
+            <div className="carrot" />
           </div>
         </div>
 

@@ -2,6 +2,15 @@
 @import "../general";
 @import "../variables";
 
+.nav-wrap.home {
+  background-color: transparent;
+  color: white;
+  a,
+  p {
+    color: white;
+  }
+}
+
 .nav-wrap {
   position: fixed;
   top: 0;
@@ -19,58 +28,6 @@
   p {
     font-size: $font-size-small;
     display: block;
-  }
-
-  .down {
-    display: inline-block;
-    width: 1em;
-    height: 1em;
-    margin-left: 0.75em;
-    &:hover {
-      &:active {
-        border-top: 2px solid $lightgrey;
-        border-right: 2px solid $lightgrey;
-      }
-    }
-  }
-
-  .down:after {
-    content: "";
-    display: inline-block;
-    margin-top: 0.6em;
-    width: 10px;
-    height: 10px;
-    border-top: 2px solid $darkblue;
-    border-right: 2px solid $darkblue;
-    -moz-transform: rotate(135deg);
-    -webkit-transform: rotate(135deg);
-    transform: rotate(135deg);
-  }
-
-  .up {
-    display: none;
-    width: 1em;
-    height: 1em;
-    margin-left: 0.75em;
-    &:hover {
-      &:active {
-        border-top: 2px solid $lightgrey;
-        border-right: 2px solid $lightgrey;
-      }
-    }
-  }
-
-  .up:after {
-    content: "";
-    display: inline-block;
-    margin-top: 0.6em;
-    width: 10px;
-    height: 10px;
-    border-left: 2px solid $darkblue;
-    border-bottom: 2px solid $darkblue;
-    -moz-transform: rotate(135deg);
-    -webkit-transform: rotate(135deg);
-    transform: rotate(135deg);
   }
 
   .name {
@@ -109,6 +66,8 @@
 
   .nav-item {
     min-width: 120px;
+    width: auto;
+    padding: 15px;
     position: relative;
     line-height: 26px;
     font-family: fabrique, "Helvetica Neue Light", "Helvetica Neue", Helvetica,
@@ -128,6 +87,11 @@
       font-family: $serif-italic;
       display: none;
       position: absolute;
+      margin-top: 0.7em;
+
+      .nav-child {
+        font-family: $serif-italic;
+      }
     }
 
     // nav item on hover

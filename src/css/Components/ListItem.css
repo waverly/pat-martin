@@ -14,11 +14,7 @@
   font-weight: 400; }
 
 /*....................................................................................*/
-.main {
-  font: 16px / 1 Arial;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh; }
+.list-item {
+  width: 45%;
+  margin-top: 50px;
+  z-index: 3; }

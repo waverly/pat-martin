@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Arrow from "../Components/Arrow";
 
 import "./../../css/Views/Nav.css";
 
@@ -7,10 +8,11 @@ class Nav extends React.Component {
   constructor(props) {
     super(props);
 
-    this.clickToggle = this.clickToggle.bind(this);
+    this.arrowToggle = this.arrowToggle.bind(this);
 
     this.state = {
-      active: false
+      active: false,
+      arrowdown: true
     };
   }
 
@@ -18,12 +20,17 @@ class Nav extends React.Component {
     this.setState({ active: !this.state.active });
   }
 
+  arrowToggle() {
+    this.setState({ arrowdown: !this.state.arrowdown });
+    console.log("in arrow toggle");
+  }
+
   render() {
     const path = this.props.location.pathname;
     console.log(path);
 
     return (
-      <div className="nav-wrap">
+      <div className={path == "/" ? "nav-wrap home" : "nav-wrap"}>
         <div className="logo">
           <div className="logomark">
             <img src="./../assets/imgs/logo.png" alt="" />
@@ -46,18 +53,22 @@ class Nav extends React.Component {
 
           <div
             className={"nav-item " + (this.state.active ? "expanded" : "")}
-            onClick={this.clickToggle}
+            onMouseEnter={this.arrowToggle}
+            onMouseLeave={this.arrowToggle}
           >
             <div className="index sans-serif">02</div>
             <div className="item-title">
-              Investment Strategies <span className="down" />
-              <span className="up" />
+              Investment Strategies
+              <Arrow
+                direction={this.state.arrowdown ? "down" : "up"}
+                className="down"
+              />
             </div>
             <div className="nav-children">
               <Link
                 to={`/private-equity`}
                 className={
-                  "nav-item " +
+                  "nav-child " +
                   (path === "/private-equity" ? "active" : "inactive")
                 }
               >
@@ -66,7 +77,7 @@ class Nav extends React.Component {
               <Link
                 to={`/direct-lending`}
                 className={
-                  "nav-item " +
+                  "nav-child " +
                   (path === "/direct-lending" ? "active" : "inactive")
                 }
               >

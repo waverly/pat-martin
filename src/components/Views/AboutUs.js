@@ -8,7 +8,8 @@ class AboutUs extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedKey: 0
+      selectedKey: 0,
+      expanded: false
     };
 
     this.revealChild = this.revealChild.bind(this);

@@ -14,17 +14,3 @@
   font-weight: 400; }
 
 /*....................................................................................*/
-.page-header {
-  width: 100%;
-  background-color: #FF9E23;
-  height: 200px;
-  padding-left: 50px;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center; }
-  .page-header .header-info {
-    color: white; }
-    .page-header .header-info .index {
-      font-size: 14px; }
-    .page-header .header-info .title h1 {
-      color: white; }

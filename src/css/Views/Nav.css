@@ -127,7 +127,12 @@ li {
   font-size: 21px;
   list-style-type: none;
   letter-spacing: 1px;
-  color: #000000; }
+  color: #444444; }
+
+h1,
+h2,
+h3 {
+  color: #444444; }
 
 input,
 textarea,
@@ -245,7 +250,8 @@ h3 {
   font-family: sectra-italic, serif; }
 
 .highlight {
-  background-color: #FFFADE; }
+  background-color: #FFFADE;
+  color: #444444 !important; }
 
 .pop {
   position: fixed;
@@ -266,8 +272,8 @@ h3 {
   position: relative;
   padding: 50px; }
 
-.paragraph {
-  margin-top: 50px; }
+.paragraph p {
+  margin-top: 20px; }
 
 .col-right {
   width: 50%;
@@ -328,6 +334,13 @@ table {
   font-weight: 400; }
 
 /*....................................................................................*/
+.nav-wrap.home {
+  background-color: transparent;
+  color: white; }
+  .nav-wrap.home a,
+  .nav-wrap.home p {
+    color: white; }
+
 .nav-wrap {
   position: fixed;
   top: 0;
@@ -344,44 +357,6 @@ table {
   .nav-wrap p {
     font-size: 14px;
     display: block; }
-  .nav-wrap .down {
-    display: inline-block;
-    width: 1em;
-    height: 1em;
-    margin-left: 0.75em; }
-    .nav-wrap .down:hover:active {
-      border-top: 2px solid #999999;
-      border-right: 2px solid #999999; }
-  .nav-wrap .down:after {
-    content: "";
-    display: inline-block;
-    margin-top: 0.6em;
-    width: 10px;
-    height: 10px;
-    border-top: 2px solid #001938;
-    border-right: 2px solid #001938;
-    -moz-transform: rotate(135deg);
-    -webkit-transform: rotate(135deg);
-    transform: rotate(135deg); }
-  .nav-wrap .up {
-    display: none;
-    width: 1em;
-    height: 1em;
-    margin-left: 0.75em; }
-    .nav-wrap .up:hover:active {
-      border-top: 2px solid #999999;
-      border-right: 2px solid #999999; }
-  .nav-wrap .up:after {
-    content: "";
-    display: inline-block;
-    margin-top: 0.6em;
-    width: 10px;
-    height: 10px;
-    border-left: 2px solid #001938;
-    border-bottom: 2px solid #001938;
-    -moz-transform: rotate(135deg);
-    -webkit-transform: rotate(135deg);
-    transform: rotate(135deg); }
   .nav-wrap .name .name-p:hover {
     cursor: pointer;
     color: #999999; }
@@ -404,6 +379,8 @@ table {
     align-items: flex-start; }
   .nav-wrap .nav-item {
     min-width: 120px;
+    width: auto;
+    padding: 15px;
     position: relative;
     line-height: 26px;
     font-family: fabrique, "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
@@ -417,7 +394,10 @@ table {
     .nav-wrap .nav-item .nav-children {
       font-family: sectra-italic, serif;
       display: none;
-      position: absolute; }
+      position: absolute;
+      margin-top: 0.7em; }
+      .nav-wrap .nav-item .nav-children .nav-child {
+        font-family: sectra-italic, serif; }
     .nav-wrap .nav-item:hover .nav-children {
       display: block; }
     .nav-wrap .nav-item:hover .down {
