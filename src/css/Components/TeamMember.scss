@@ -2,6 +2,7 @@
 
 .team-member {
   width: 30%;
+  display: inline-block;
   margin-top: $margin-sides;
   // position: relative;
 
@@ -49,6 +50,9 @@
     position: relative;
     margin-top: $margin-sides;
     left: 0;
+    p {
+      // position: absolute;
+    }
   }
 
   .text-wrap {

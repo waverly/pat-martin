@@ -249,7 +249,12 @@ h3 {
 .serif-italic {
   font-family: sectra-italic, serif; }
 
-.highlight {
+span.highlight {
+  background-color: #FFFADE;
+  color: #444444 !important; }
+
+highlight {
+  display: inline;
   background-color: #FFFADE;
   color: #444444 !important; }
 
@@ -264,10 +269,11 @@ h3 {
   background: rgba(255, 255, 255, 0.2); }
 
 .col-wrap {
-  display: flex; }
+  display: flex;
+  justify-content: space-between; }
 
 .col-left {
-  width: 50%;
+  width: 45%;
   display: inline-block;
   position: relative;
   padding: 50px; }
@@ -276,7 +282,7 @@ h3 {
   margin-top: 20px; }
 
 .col-right {
-  width: 50%;
+  width: 45%;
   display: inline-block;
   position: relative;
   top: -150px; }
@@ -294,6 +300,7 @@ h3 {
 
 .list-wrap {
   position: relative;
+  display: flex;
   margin-top: 50px; }
 
 ul.list {
@@ -390,26 +397,47 @@ table {
     .nav-wrap .nav-item .index {
       font-size: 14px; }
     .nav-wrap .nav-item .item-title {
-      font-family: sectra-italic, serif; }
+      font-family: sectra-italic, serif;
+      font-size: 14px; }
     .nav-wrap .nav-item .nav-children {
       font-family: sectra-italic, serif;
       display: none;
       position: absolute;
-      margin-top: 0.7em; }
+      margin-top: 0.7em;
+      background-color: white;
+      width: 100%;
+      background-color: white;
+      top: 0;
+      left: 0;
+      padding: 60px 0px 0px 0px;
+      border: 1px solid #999999; }
       .nav-wrap .nav-item .nav-children .nav-child {
-        font-family: sectra-italic, serif; }
-    .nav-wrap .nav-item:hover .nav-children {
-      display: block; }
-    .nav-wrap .nav-item:hover .down {
-      display: none; }
-    .nav-wrap .nav-item:hover .up {
-      display: inline-block; }
-  .nav-wrap .nav-item.expanded .nav-children {
-    display: block !important; }
-  .nav-wrap .nav-item.expanded .up {
-    display: inline-block; }
-  .nav-wrap .nav-item.expanded .down {
-    display: none; }
+        font-family: sectra-italic, serif;
+        height: 30px !important;
+        padding: 0 14px; }
+        .nav-wrap .nav-item .nav-children .nav-child a {
+          color: #001938;
+          line-height: 30px !important; }
+    .nav-wrap .nav-item:hover {
+      z-index: 3; }
+      .nav-wrap .nav-item:hover .index {
+        color: #999999;
+        position: relative;
+        z-index: 10; }
+      .nav-wrap .nav-item:hover .item-title {
+        position: relative;
+        color: #999999;
+        z-index: 10; }
+      .nav-wrap .nav-item:hover .nav-children {
+        display: block; }
+        .nav-wrap .nav-item:hover .nav-children a {
+          color: #001938; }
+          .nav-wrap .nav-item:hover .nav-children a:hover {
+            background-color: #ECF8FF; }
+      .nav-wrap .nav-item:hover .down {
+        display: none; }
+      .nav-wrap .nav-item:hover .up {
+        display: inline-block; }
   .nav-wrap .logo p {
     text-transform: uppercase;
     font-size: 22px; }

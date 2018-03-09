@@ -1,14 +1,11 @@
 import React from "react";
 import BlueBox from "../Components/BlueBox";
 import Header from "../Components/Header";
+import ListItem from "../Components/ListItem";
 
 import "./../../css/Views/WhatWeDo.css";
 
 class WhatWeDo extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   componentDidMount() {
     console.log("props will be below");
     console.log(this.props);
@@ -22,10 +19,20 @@ class WhatWeDo extends React.Component {
           <Header index="01" title={wwd.title["0"].text} />
           <div className="col-wrap">
             <div className="col-left">
-              <h3 className="serif description">{wwd.tagline["0"].text}</h3>
+              <h3
+                className="serif description"
+                dangerouslySetInnerHTML={this.props.handleHighlight(
+                  wwd.tagline["0"]
+                )}
+              />
               <div className="paragraph serif">
                 {wwd.description.map((p, index) => (
-                  <p key={index}> {p.text} </p>
+                  <p
+                    key={index}
+                    dangerouslySetInnerHTML={this.props.handleHighlight(
+                      wwd.description[index]
+                    )}
+                  />
                 ))}
               </div>
             </div>
@@ -35,13 +42,9 @@ class WhatWeDo extends React.Component {
                 <img src={wwd.image.url} alt="" />
                 <p className="caption serif">image caption</p>
                 <div className="list-wrap">
-                  <ul className="list">
-                    <li className="list-title sans-serif">Industries</li>
-                    {wwd.industry.map((p, index) => (
-                      <li key={index}> {p["industry-type"]["0"].text} </li>
-                    ))}
-                  </ul>
-                  <BlueBox left="10%" top="10%" width="20vw" height="20vw" />
+                  <ListItem item={wwd.body["0"]} />
+
+                  <BlueBox left="10%" top="20%" width="20vw" height="20vw" />
                 </div>
               </div>{" "}
               {/*  end inner wrap */}

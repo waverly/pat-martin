@@ -10,13 +10,19 @@
   }
 }
 
-.list-wrap {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  padding-bottom: 50px;
-  margin-bottom: 100px;
-  margin-left: $margin-sides;
+.direct-lending {
+  .list-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-bottom: 50px;
+    margin-bottom: 100px;
+    margin-left: $margin-sides;
+
+    .list-item {
+      margin-top: $margin-sides;
+    }
+  }
 }
 
 .transaction-wrap {

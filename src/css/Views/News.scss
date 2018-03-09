@@ -1,11 +1,28 @@
-@import '../variables';
+@import "../variables";
 
-.main {
-	font: 16px / 1 Arial;
-	position: relative;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	height: 100vh;
+.news-wrap {
+  .news-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    position: relative;
+    .text-left {
+      display: inline-block;
+      .index {
+        font-size: $font-size-small;
+      }
+    }
+    .text-right {
+      display: inline-block;
+      .active {
+        color: $lightgrey;
+      }
+      h3 {
+        line-height: $line-height-h1;
+        display: inline-block;
+        margin: 0.5em;
+        font-family: $serif;
+      }
+    }
+  }
 }

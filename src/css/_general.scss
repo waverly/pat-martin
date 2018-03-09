@@ -146,7 +146,13 @@ h3 {
   font-family: $serif-italic;
 }
 
-.highlight {
+span.highlight {
+  background-color: $cream;
+  color: $midgrey !important;
+}
+
+highlight {
+  display: inline;
   background-color: $cream;
   color: $midgrey !important;
 }
@@ -166,10 +172,11 @@ h3 {
 
 .col-wrap {
   display: flex;
+  justify-content: space-between;
 }
 
 .col-left {
-  width: 50%;
+  width: 45%;
   display: inline-block;
   position: relative;
   padding: $margin-sides;
@@ -182,7 +189,7 @@ h3 {
 }
 
 .col-right {
-  width: 50%;
+  width: 45%;
   display: inline-block;
   position: relative;
   top: -150px;
@@ -208,6 +215,7 @@ h3 {
 
 .list-wrap {
   position: relative;
+  display: flex;
   margin-top: $margin-sides;
 }
 

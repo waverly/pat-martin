@@ -1,11 +1,53 @@
-@import '../variables';
+@import "../variables";
 
-.main {
-	font: 16px / 1 Arial;
-	position: relative;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	height: 100vh;
+.portfolio-wrap {
+  padding: $margin-sides;
+
+  .grey {
+    color: $lightgrey;
+  }
+  .portfolio-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    position: relative;
+    .text-left {
+      display: inline-block;
+      .index {
+        font-size: $font-size-small;
+      }
+    }
+    .text-right {
+      display: inline-block;
+      .active {
+        color: $lightgrey;
+      }
+      h3 {
+        line-height: $line-height-h1;
+      }
+    }
+  }
+  .portfolio-grid {
+    position: relative;
+    display: grid;
+    width: 100%;
+    min-height: 100vh;
+    margin-top: $margin-sides;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 25% 25% 25% 25%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-position: center;
+  }
+  .testimonial-wrap {
+    width: 100%;
+    position: relative;
+    margin-top: $margin-sides;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 }

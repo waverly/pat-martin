@@ -8,16 +8,12 @@ import Transaction from "../Components/Transaction";
 import "./../../css/Views/DirectLending.css";
 
 class DirectLending extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     if (this.props.data) {
       const dl = this.props.data.data;
 
       return (
-        <div className="section-wrap">
+        <div className="section-wrap direct-lending">
           <Header index="02 Investment Strategies" title="Direct Lending" />
 
           {/* start columns */}

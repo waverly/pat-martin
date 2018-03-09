@@ -14,9 +14,6 @@ class Transaction extends React.Component {
   handleExpand() {
     const newExpand = !this.state.expanded;
     this.setState({ expanded: newExpand });
-    // how to select only this panel
-    console.log(React.children);
-    // const panel = document.querySelector(".panel");
     if (this.panel.style.maxHeight) {
       this.panel.style.maxHeight = null;
     } else {

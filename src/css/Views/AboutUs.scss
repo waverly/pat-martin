@@ -1,9 +1,12 @@
 @import "../variables";
 
+.highlight {
+  background: blue;
+}
+
 .our-team {
   width: 100vw;
   padding: 10vw;
-  background-color: lightblue;
   min-height: 50vh;
   position: relative;
   text-align: center;
@@ -19,5 +22,28 @@
     justify-content: space-between;
     flex-wrap: wrap;
     position: relative;
+  }
+}
+
+.col-1 {
+  column-count: 2;
+  margin-top: -150px;
+
+  .description {
+    margin-top: 200px;
+    padding: 50px 0 50px 50px;
+  }
+  .paragraph {
+    padding: 0px 0 50px 50px;
+  }
+}
+
+.col-2 {
+  position: relative;
+  z-index: $z-feed;
+  float: right;
+  padding: 50px 0 50px 50px;
+  img {
+    max-width: 100%;
   }
 }

@@ -16,21 +16,37 @@ class AboutUs extends React.Component {
   }
 
   revealChild(key) {
-    // console.log(key);
-    console.log("this key of the clicked item is " + key);
     this.setState({ selectedKey: key });
   }
 
   render() {
     if (this.props.data) {
       const about = this.props.data.data;
-      console.log(about.teammember["0"].name["0"].text);
       return (
         <div className="aboutus section-wrap">
           <Header index="01" title="About Us" />
 
           {/*  start column */}
-          <div className="col-wrap">
+
+          <div className="col-1">
+            <h3
+              className="serif description"
+              dangerouslySetInnerHTML={this.props.handleHighlight(
+                about.tagline["0"]
+              )}
+            />
+            <div className="col-2">
+              <img src={about.image.url} alt="" />
+              <p className="caption serif">image caption</p>
+            </div>
+            <div className="paragraph serif">
+              {about.description.map((p, index) => (
+                <p key={index}> {p.text} </p>
+              ))}
+            </div>
+          </div>
+
+          {/* <div className="col-wrap">
             <div className="col-left">
               <h3 className="serif description">{about.tagline["0"].text}</h3>
               <div className="paragraph serif">
@@ -45,9 +61,9 @@ class AboutUs extends React.Component {
                 <img src={about.image.url} alt="" />
                 <p className="caption serif">image caption</p>
               </div>{" "}
-              {/*  end inner wrap */}
             </div>
           </div>
+          */}
           {/*  end column */}
 
           <div className="our-team">
@@ -65,7 +81,7 @@ class AboutUs extends React.Component {
                     index={index}
                     active={this.state.active}
                     revealChild={() => this.revealChild(index)}
-                    isSelected={this.state.selectedKey == index}
+                    isSelected={this.state.selectedKey === index}
                   />
                 ))}
               </div>

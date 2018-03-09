@@ -16,6 +16,7 @@
 /*....................................................................................*/
 .team-member {
   width: 30%;
+  display: inline-block;
   margin-top: 50px; }
   .team-member .member-inner-wrap {
     position: relative; }

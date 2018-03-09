@@ -22,15 +22,13 @@ class Nav extends React.Component {
 
   arrowToggle() {
     this.setState({ arrowdown: !this.state.arrowdown });
-    console.log("in arrow toggle");
   }
 
   render() {
     const path = this.props.location.pathname;
-    console.log(path);
 
     return (
-      <div className={path == "/" ? "nav-wrap home" : "nav-wrap"}>
+      <div className={path === "/" ? "nav-wrap home" : "nav-wrap"}>
         <div className="logo">
           <div className="logomark">
             <img src="./../assets/imgs/logo.png" alt="" />

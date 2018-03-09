@@ -7,6 +7,7 @@ import WhatWeDo from "./WhatWeDo";
 import DirectLending from "./DirectLending";
 import PrivateEquity from "./PrivateEquity";
 import Portfolio from "./Portfolio";
+import PortfolioDetail from "./PortfolioDetail";
 import News from "./News";
 import AboutUs from "./AboutUs";
 import ContactUs from "./ContactUs";
@@ -23,6 +24,8 @@ class App extends Component {
     super();
 
     this.handleData = this.handleData.bind(this);
+    this.handleHighlight = this.handleHighlight.bind(this);
+    this.renderPortfolioState = this.renderPortfolioState.bind(this);
 
     this.state = {};
   }
@@ -30,24 +33,62 @@ class App extends Component {
   componentDidMount() {
     Prismic.api(apiEndpoint).then(api => {
       console.log("inside of prismic api");
-      api.query("").then(response => {
-        console.log(response);
-        this.handleData(response.results);
-      });
+      api
+        .query("", {
+          pageSize: 100
+        })
+        .then(response => {
+          // console.log(response);
+          this.handleData(response.results);
+        });
     });
     // end of api
   }
   // end of didmount
 
+  handleHighlight(text) {
+    let phrase = text.text;
+    if (text.spans.length > 0) {
+      let counter = 0;
+      text.spans.forEach(i => {
+        let arr = phrase.split("");
+        let first = i.start + counter;
+        let last = i.end + 1 + counter;
+        arr.splice(first, 0, "<highlight>");
+        arr.splice(last, 1, "</highlight> ");
+        phrase = arr.join("");
+        counter += 23;
+      });
+    }
+    return { __html: phrase };
+  }
+
+  renderPortfolioState() {}
+
   handleData(data) {
+    let news = [];
+    let companies = [];
     data.forEach(d => {
       // this sets state for each type of page and stores data in it
       const type = d.type;
-      this.setState({ [type]: d });
+
+      if (type === "news") {
+        news.push(d);
+        console.log(news);
+        this.setState({ news });
+      } else if (type === "portfoliocompany") {
+        companies.push(d);
+        console.log(companies);
+        this.setState({ companies });
+      } else {
+        this.setState({ [type]: d });
+      }
     });
   }
 
   render() {
+    if (!this.state.news) return "Loading...";
+
     return (
       <div className="router-ex">
         <Route
@@ -71,7 +112,7 @@ class App extends Component {
                     render={props => (
                       <WhatWeDo
                         data={this.state.whatwedo}
-                        // handleIndexClick={this.handleIndexClick}
+                        handleHighlight={text => this.handleHighlight(text)}
                       />
                     )}
                   />
@@ -86,10 +127,7 @@ class App extends Component {
                     exact
                     path="/private-equity"
                     render={props => (
-                      <PrivateEquity
-                        data={this.state.privateequity}
-                        // handleIndexClick={this.handleIndexClick}
-                      />
+                      <PrivateEquity data={this.state.privateequity} />
                     )}
                   />
                   <Route
@@ -98,17 +136,31 @@ class App extends Component {
                     render={props => (
                       <Portfolio
                         data={this.state.portfolio}
-                        // handleIndexClick={this.handleIndexClick}
+                        companies={this.state.portfoliocompany}
                       />
                     )}
+                  />
+                  <Route
+                    path="/portfolio/:name"
+                    render={({ match }) => {
+                      const portfolioSlug = match.params.name;
+                      let found;
+                      if (Array.isArray(this.state.portfoliocompany)) {
+                        // console.log(this.state.portfoliocompany);
+                        found = this.state.portfoliocompany.find(
+                          p => p.uid === match.params.name
+                        );
+                      }
+                      return <PortfolioDetail data={found} />;
+                    }}
                   />
                   <Route
                     exact
                     path="/news"
                     render={props => (
                       <News
-                      // images={this.state.images}
-                      // handleIndexClick={this.handleIndexClick}
+                        data={this.state.news}
+                        // handleIndexClick={this.handleIndexClick}
                       />
                     )}
                   />
@@ -118,7 +170,7 @@ class App extends Component {
                     render={props => (
                       <AboutUs
                         data={this.state.about}
-                        // handleIndexClick={this.handleIndexClick}
+                        handleHighlight={text => this.handleHighlight(text)}
                       />
                     )}
                   />

@@ -3,7 +3,7 @@ import "./../../css/Components/Expand.css";
 
 const Expand = expanded => {
   // alert(expanded.expanded);
-  if (expanded.expanded == true) {
+  if (expanded.expanded === true) {
     // retturn negative
     return (
       <div className="icon">

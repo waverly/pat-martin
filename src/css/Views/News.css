@@ -14,11 +14,21 @@
   font-weight: 400; }
 
 /*....................................................................................*/
-.main {
-  font: 16px / 1 Arial;
-  position: relative;
+.news-wrap .news-header {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh; }
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative; }
+  .news-wrap .news-header .text-left {
+    display: inline-block; }
+    .news-wrap .news-header .text-left .index {
+      font-size: 14px; }
+  .news-wrap .news-header .text-right {
+    display: inline-block; }
+    .news-wrap .news-header .text-right .active {
+      color: #999999; }
+    .news-wrap .news-header .text-right h3 {
+      line-height: 100px;
+      display: inline-block;
+      margin: 0.5em;
+      font-family: sectra, sans-serif; }
